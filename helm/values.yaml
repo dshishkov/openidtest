@@ -9,6 +9,8 @@ imagePullSecrets: []
 nameOverride: 'openidtest'
 fullnameOverride: 'openidtest'
 
+env: []
+
 serviceAccount:
   create: true
   annotations: {}
@@ -36,6 +38,10 @@ ingress:
       paths:
         - path: /
           pathType: Prefix
+  tls:
+    - secretName: openidtest-govspend-com-tls
+      hosts:
+        - openidtest.govspend.com
 
 resources:
   limits:
