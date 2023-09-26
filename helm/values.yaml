@@ -56,4 +56,6 @@ tolerations: []
 
 affinity: {}
 
-command: ['node', 'server.js']
+command:
+  - node
+  - server.js
