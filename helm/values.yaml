@@ -58,4 +58,4 @@ affinity: {}
 
 command:
   - node
-  - server.js
+  - app/server.js
