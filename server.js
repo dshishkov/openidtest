@@ -8,6 +8,7 @@ const app = express()
 const { auth } = require('express-openid-connect')
 app.use(
   auth({
+    idpLogout: true,
     authRequired: false,
     issuerBaseURL: process.env.ISSUER_BASE_URL,
     baseURL: process.env.BASE_URL,
@@ -30,5 +31,5 @@ app.get('/', async (req, res) => {
 const port = process.env.PORT || 3000
 
 app.listen(port, () => {
-  console.log(`listening on port ${port}`)
+  console.info(`server listening on port ${port}`)
 })
